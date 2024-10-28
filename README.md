@@ -14,9 +14,9 @@ VRChatの技術スタックをまとめたものです。
 
 情報は随時更新されます。
 
-もし情報が間違っていたり、追加したい情報があれば、[Issues](https://github.com/haru0115/vrc-tech-stack/issues)から報告してください。
+もし情報が間違っていたり、追加したい情報があれば、[Issues](https://github.com/HARU-Leit/VRC-Tech-Stack/issues)から報告してください。
 
-少しでも役に立ったら、[Star](https://github.com/haru0115/vrc-tech-stack)をお願いします。
+少しでも役に立ったら、[Star](https://github.com/HARU-Leit/VRC-Tech-Stack)をお願いします。
 
 ## コントリビューション
 

@@ -16,11 +16,11 @@ VRChatの技術スタックをまとめたものです。
 
 もし情報が間違っていたり、追加したい情報があれば、[Issues](https://github.com/HARU-Leit/VRC-Tech-Stack/issues)から報告してください。
 
-少しでも役に立ったら、[Star](https://github.com/HARU-Leit/VRC-Tech-Stack)をお願いします。
+少しでも役に立ったら、✨Starをお願いします。
 
 ## コントリビューション
 
-このプロジェクトに貢献したい場合は、プルリクエストを送信してください。詳細な手順は[CONTRIBUTING.md](./CONTRIBUTING.md)をご覧ください。
+このプロジェクトに貢献したい場合は、プルリクエストを送信してください。詳細な手順は[CONTRIBUTING.md](https://github.com/HARU-Leit/VRC-Tech-Stack/blob/main/.github/CONTRIBUTING.md)をご覧ください。
 
 ## ライセンス
 

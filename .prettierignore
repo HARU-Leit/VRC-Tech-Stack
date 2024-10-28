@@ -1,0 +1,13 @@
+# すべてを無視する
+/*
+
+# これらのファイルとフォルダを除く
+!/src
+!/public
+!/.github
+!tsconfig.json
+!astro.config.ts
+!package.json
+!.prettierrc
+!eslint.config.mjs
+!README.md

@@ -1,0 +1,37 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import PostDetails from "@layouts/PostDetails.astro";
+import getSortedPosts from "@utils/getSortedPosts";
+
+// Propsインターフェースの定義
+export interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+/**
+ * ブログの静的パスを取得する関数
+ * @returns 静的パスの配列
+ */
+export async function getStaticPaths() {
+  // 下書きでないブログ投稿を取得
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+  // 各投稿のパスとプロパティをマッピング
+  const postResult = posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+
+  return postResult;
+}
+
+// Astro.propsから投稿データを取得
+const { post } = Astro.props;
+
+// 全てのブログ投稿を取得
+const posts = await getCollection("blog");
+// ブログ投稿をソート
+const sortedPosts = getSortedPosts(posts);
+---
+
+<PostDetails post={post} posts={sortedPosts} />

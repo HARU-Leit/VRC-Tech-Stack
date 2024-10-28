@@ -1,0 +1,34 @@
+{
+  "フロントマター": {
+    "scope": "markdown",
+    "prefix": "frontmatter",
+    "body": [
+      "---",
+      "author: $1",
+      "pubDatetime: $CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000$CURRENT_TIMEZONE_OFFSET",
+      "modDatetime: $3",
+      "title: $4",
+      "featured: ${5|false,true|}",
+      "draft: ${6|true,false|}",
+      "tags:",
+      "  - $7",
+      "description: $8",
+      "---",
+    ],
+    "description": "AstroPaperブログ投稿のフロントマターブロックを追加します"
+  },
+  "ブログテンプレート": {
+    "scope": "markdown",
+    "prefix": "template",
+    "body": [
+      "${1:frontmatter}",
+      "",
+      "${2: 導入文}",
+      "",
+      "## 目次",
+      "",
+      "## ${3: 見出し1}",
+    ],
+    "description": "AstroPaperブログ投稿のテンプレートを追加します。「frontmatter」行でスニペットモーダルをトリガーして、他のスニペットを挿入する必要があります。"
+  }
+}

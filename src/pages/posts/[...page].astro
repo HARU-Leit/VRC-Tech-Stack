@@ -1,0 +1,24 @@
+---
+import { SITE } from "@config";
+import Posts from "@layouts/Posts.astro";
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import getSortedPosts from "@utils/getSortedPosts";
+
+/**
+ * ブログの静的パスを取得する関数
+ * @param paginate - ページネーション関数
+ * @returns ページネーションされた投稿の配列
+ */
+export const getStaticPaths = (async ({ paginate }) => {
+  // 下書きでないブログ投稿を取得
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  // 投稿をソートし、ページネーションを適用
+  return paginate(getSortedPosts(posts), { pageSize: SITE.postPerPage });
+}) satisfies GetStaticPaths;
+
+// Astro.propsからページデータを取得
+const { page } = Astro.props;
+---
+
+<Posts {page} />

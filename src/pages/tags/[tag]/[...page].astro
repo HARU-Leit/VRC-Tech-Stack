@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import TagPosts from "@layouts/TagPosts.astro";
+import getUniqueTags from "@utils/getUniqueTags";
+import getPostsByTag from "@utils/getPostsByTag";
+import type { GetStaticPathsOptions } from "astro";
+import { SITE } from "@config";
+
+/**
+ * 静的パスを生成する関数
+ * @param {GetStaticPathsOptions} options - ページネーションオプション
+ * @returns {Promise<Array>} 静的パスの配列
+ */
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  // ブログコレクションを取得
+  const posts = await getCollection("blog");
+  // ユニークなタグを取得
+  const tags = getUniqueTags(posts);
+
+  // 各タグに対してページネーションを適用
+  return tags.flatMap(({ tag, tagName }) => {
+    const tagPosts = getPostsByTag(posts, tag);
+
+    return paginate(tagPosts, {
+      params: { tag },
+      props: { tagName },
+      pageSize: SITE.postPerPage,
+    });
+  });
+}
+
+// URLパラメータを取得
+const params = Astro.params;
+const { tag } = params;
+// ページとタグ名を取得
+const { page, tagName } = Astro.props;
+---
+
+<TagPosts {page} {tag} {tagName} />

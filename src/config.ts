@@ -2,7 +2,7 @@ import type { Site, SocialObjects } from "./types";
 
 // サイトの設定
 export const SITE: Site = {
-  website: "https://www.google.co.jp/", // これをデプロイされたドメインに置き換えてください
+  website: "https://vts-2ss.pages.dev/", // これをデプロイされたドメインに置き換えてください
   author: "Haru",
   profile: "",
   desc: "VRChatの技術スタックについてのブログです。",
